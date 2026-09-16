@@ -134,6 +134,18 @@ p{color:var(--muted);line-height:1.48;margin:0 0 15px}
   <button class="tab" id="t-shop" onclick="shop()"><i>⛧</i>SHOP</button>
 </div>
 </div>
+  
+#### Table 1: `profiles` (User Progress Archive)
+Tracks your player statistics across the application.
+```sql
+CREATE TABLE profiles (
+  id UUID REFERENCES auth.users PRIMARY KEY,
+  username TEXT UNIQUE,
+  wallet_balance INTEGER DEFAULT 666,
+  highest_score INTEGER DEFAULT 0,
+  current_rank TEXT DEFAULT 'Acolyte',
+  updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+);
 
 <script>
 const KEY='blackpick_battle_v1';
