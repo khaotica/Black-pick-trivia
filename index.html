@@ -132,22 +132,18 @@ p{color:var(--muted);line-height:1.48;margin:0 0 15px}
   <button class="tab" id="t-daily" onclick="dailyScreen()"><i>☾</i>DAILY</button>
   <button class="tab" id="t-ach" onclick="achievements()"><i>☠</i>TROPHIES</button>
   <button class="tab" id="t-shop" onclick="shop()"><i>⛧</i>SHOP</button>
-</div>
-</div>
+  <button class="tab" id="t-user" onclick="user()"><i>$<i></i>USER</button> 
   
-#### Table 1: `profiles` (User Progress Archive)
-Tracks your player statistics across the application.
-```sql
-CREATE TABLE profiles (
-  id UUID REFERENCES auth.users PRIMARY KEY,
-  username TEXT UNIQUE,
-  wallet_balance INTEGER DEFAULT 666,
-  highest_score INTEGER DEFAULT 0,
-  current_rank TEXT DEFAULT 'Acolyte',
-  updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
-);
+	<script>
+	
+		const Table 1: `profiles` (User Progress Archive) sql
+ profiles (id UUID REFERENCES auth.users PRIMARY KEY,
+  .username TEXT UNIQUE,
+  .wallet_balance INTEGER DEFAULT 666,
+  .highest_score INTEGER DEFAULT 0,
+  .current_rank TEXT DEFAULT 'Acolyte',
+  .updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
 
-<script>
 const KEY='blackpick_battle_v1';
 let save=JSON.parse(localStorage.getItem(KEY)||'null')||{
   picks:70,xp:0,wins:0,perfect:0,bestStreak:0,dailyClaimed:false,dailyPlayed:false,
@@ -170,7 +166,8 @@ myth:`radial-gradient(circle at 50% 0%,rgba(255,192,95,.25),transparent 20%),rad
 horror:`radial-gradient(circle at 85% 15%,rgba(129,212,255,.18),transparent 18%),radial-gradient(circle at 16% 72%,rgba(156,91,255,.13),transparent 20%),linear-gradient(180deg,rgba(13,21,29,.30),rgba(9,11,17,.04))`,
 weird:`radial-gradient(circle at 78% 5%,rgba(255,152,91,.21),transparent 18%),radial-gradient(circle at 16% 38%,rgba(98,238,255,.17),transparent 20%),linear-gradient(180deg,rgba(18,25,34,.30),rgba(9,11,17,.04))`,
 demon:`radial-gradient(circle at 50% 0%,rgba(255,157,74,.30),transparent 22%),radial-gradient(circle at 18% 74%,rgba(92,208,255,.10),transparent 18%),radial-gradient(circle at 83% 55%,rgba(187,69,54,.15),transparent 18%),linear-gradient(180deg,rgba(37,18,15,.34),rgba(9,11,17,.04))`,
-extreme:`radial-gradient(circle at 78% 8%,rgba(255,86,81,.24),transparent 18%),radial-gradient(circle at 20% 50%,rgba(114,93,255,.16),transparent 20%),linear-gradient(180deg,rgba(31,13,16,.34),rgba(9,11,17,.04))`
+extreme:`radial-gradient(circle at 50% 0%,rgba(255,192,95,.25),transparent 20%),radial-gradient(circle at 15% 66%,rgba(167,106,255,.14),transparent 20%),linear-gradient(180deg,rgba(28,18,30,.30),rgba(9,11,17,.04))`,
+serialkiller:`radial-gradient(circle at 85% 15%,rgba(129,212,255,.18),transparent 18%),radial-gradient(circle at 16% 72%,rgba(156,91,255,.13),transparent 20%),linear-gradient(180deg,rgba(13,21,29,.30),rgba(9,11,17,.04))`,
 };
 
 const cats=[
@@ -243,6 +240,9 @@ const qs=[
 {c:'extreme',d:3,q:'Which band released Altars of Madness?',a:['Morbid Angel','Entombed','Carcass','Suffocation'],k:0,f:'Morbid Angel released Altars of Madness in 1989.'},
 {c:'extreme',d:3,q:'Which Swedish band released Left Hand Path?',a:['Entombed','Dismember','At the Gates','Bathory'],k:0,f:'Entombed released Left Hand Path in 1990.'},
 {c:'extreme',d:3,q:'Which band is associated with the album Filosofem?',a:['Burzum','Immortal','Emperor','Satyricon'],k:0,f:'Burzum released Filosofem in 1996.'}
+
+	/*SERIAL KILLER */
+	{c:'serial' d:1,q:'question 1',a.[insert answer here]
 ];
 
 const bots=[
